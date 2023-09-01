@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class LocationPointComponent : Button
+public class LocationPointComponent : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI _locationName;
-    [SerializeField] TextMeshProUGUI _locationDescription;
-    [SerializeField] TextMeshProUGUI _locationType;
+    [SerializeField] private TextMeshProUGUI _locationName;
+    [SerializeField] private TextMeshProUGUI _locationType;
+    // [SerializeField] private TextMeshProUGUI _locationDescription;
 
     public void SetLocationPointComponent(LocationPointScriptableObject _locationPoint)
     {
         _locationName.text = _locationPoint.locationName;
-        _locationDescription.text = _locationPoint.locationDescription;
         _locationType.text = _locationPoint.locationType;
+        // _locationDescription.text = _locationPoint.locationDescription;
     }
 }
