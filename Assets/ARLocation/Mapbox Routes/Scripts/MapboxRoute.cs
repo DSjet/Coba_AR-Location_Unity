@@ -387,7 +387,7 @@ namespace ARLocation.MapboxRoutes
         ///
         /// In the context of the `MapboxRoute` class, a "target" is location
         /// of the route where a maneuver is expected to happen, e.g. "Turn
-        /// right", "Keep left", "You have arrived at your destination".
+        /// right", "Keep left", "You have arrived at your _destination".
         ///
         /// </summar>
         public void SetTarget(int index)

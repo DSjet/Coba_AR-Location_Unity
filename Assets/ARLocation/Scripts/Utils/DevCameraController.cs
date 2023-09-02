@@ -30,7 +30,7 @@ namespace ARLocation.Utils
         void Awake()
         {
             // If we are not running on a device, make this the main
-            // camera, else, self-destruct.
+            // _camera, else, self-destruct.
             if (!Misc.IsARDevice())
             {
                 var arCamera = GameObject.Find("AR Camera");

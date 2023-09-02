@@ -304,7 +304,7 @@ namespace ARLocation
         /// </summary>
         /// <param name="arLocationRoot"></param>
         /// <param name="transform">The GameObject's transform.</param>
-        /// <param name="user">The user's point of view Transform, e.g., camera.</param>
+        /// <param name="user">The user's point of view Transform, e.g., _camera.</param>
         /// <param name="userLocation">User Location.</param>
         /// <param name="objectLocation">Object Location.</param>
         /// <param name="heightIsRelative"></param>

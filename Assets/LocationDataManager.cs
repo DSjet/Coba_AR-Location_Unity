@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.XR.ARFoundation;
 using Unity.VisualScripting;
+using static UnityEngine.XR.ARSubsystems.XRCpuImage;
 
 namespace ARLocation.MapboxRoutes
 {
@@ -12,62 +13,101 @@ namespace ARLocation.MapboxRoutes
     {
         [SerializeField] MapboxRoute _mapboxRoute;
         [SerializeField] List<LocationPointScriptableObject> _locationPoints;
+        [SerializeField] GameObject _arSession;
+        [SerializeField] GameObject _arSessionOrigin;
+        [SerializeField] GameObject _camera;
+        [SerializeField] Location _destination;
+        [SerializeField] string _mapboxToken;
 
-        [SerializeField] LocationPointComponent locationPointPrefab;
-        [SerializeField] Transform locationPointContainer;
-        [SerializeField] GameObject mapsUI;
+        [SerializeField] LocationPointComponent _locationPointPrefab;
+        [SerializeField] Transform _locationPointContainer;
+        [SerializeField] GameObject _mapsUI;
 
-        // Start is called before the first frame update
+        private List<GeocodingFeature> _geocodingFeatureResult;
+
         void Start()
         {
             foreach (var locationPoint in _locationPoints)
             {
-                LocationPointComponent locationPointComponent = Instantiate(locationPointPrefab, locationPointContainer);
+                LocationPointComponent locationPointComponent = Instantiate(_locationPointPrefab, _locationPointContainer);
                 locationPointComponent.SetLocationPointComponent(locationPoint);
-                locationPointComponent.GetComponent<Button>().onClick.AddListener(() => StartRouting(locationPoint.locationQuery));
+                locationPointComponent.GetComponent<Button>().onClick.AddListener(() => StartCoroutine(StartRouting(locationPoint.locationQuery)));
             }
         }
 
-        // Update is called once per frame
-        void Update()
+        private IEnumerator StartRouting(string queryRequest)
         {
+            MapboxApi mapboxApi = new MapboxApi(_mapboxToken);
+            yield return mapboxApi.QueryLocal(queryRequest, true);
+            Debug.Log("Clicked");
 
+            if (mapboxApi.ErrorMessage != null)
+            {
+                Debug.LogError(mapboxApi.ErrorMessage);
+                _geocodingFeatureResult = new List<GeocodingFeature>();
+            }
+            else
+            {
+                _geocodingFeatureResult = mapboxApi.QueryLocalResult.features;
+                Location _placeOfInterest = _geocodingFeatureResult[0].geometry.coordinates[0];
+                StartRoute(_placeOfInterest);
+                _mapsUI.SetActive(true);
+                gameObject.SetActive(false);
+            }
         }
 
-        public void StartRouting(string queryRequest)
+        public void StartRoute(Location dest)
         {
-            MapboxApi mapbox = new MapboxApi("eyJ1IjoiYW5hbWFsb2Nhcmlzc3MiLCJhIjoiY2xreThyYXgxMWVjcDNtcHJ6emY1a3QzaCJ9");
-            RouteWaypoint _newRoute = new RouteWaypoint { Type = RouteWaypointType.Query };
-            RouteLoader routeLoader = new RouteLoader(mapbox);
-            routeLoader.LoadRoute(new RouteWaypoint { Type = RouteWaypointType.UserLocation }, _newRoute);
-            mapsUI.SetActive(true);
-            gameObject.SetActive(false);
+            if (ARLocationProvider.Instance.IsEnabled)
+            {
+                loadRoute(dest);
+                // ARLocationProvider.Instance.CurrentLocation.ToLocation(),
+            }
+            //else
+            //{
+            //    ARLocationProvider.Instance.OnEnabled.AddListener(loadRoute());
+            //}
         }
 
-        //private void loadRoute(Location _)
-        //{
-        //    if (s.destination != null)
-        //    {
-        //        var lang = _mapboxRoute.Settings.Language;
-        //        var api = new MapboxApi("eyJ1IjoiYW5hbWFsb2Nhcmlzc3MiLCJhIjoiY2xreThyYXgxMWVjcDNtcHJ6emY1a3QzaCJ9", lang);
-        //        var loader = new RouteLoader(api);
-        //        StartCoroutine(
-        //                loader.LoadRoute(
-        //                    new RouteWaypoint { Type = RouteWaypointType.UserLocation },
-        //                    new RouteWaypoint { Type = RouteWaypointType.Location, Location = s.destination },
-        //                    (err, res) =>
-        //                    {
-        //                        if (err != null)
-        //                        {
-        //                            s.ErrorMessage = err;
-        //                            s.Results = new List<GeocodingFeature>();
-        //                            return;
-        //                        }
-        //                        _mapboxRoute.RoutePathRenderer = currentPathRenderer;
-        //                        _mapboxRoute.BuildRoute(res);
-        //                    }));
-        //    }
-        //}
+        public void EndRoute()
+        {
+            //ARLocationProvider.Instance.OnEnabled.RemoveListener(loadRoute);
+            _arSession.SetActive(false);
+            _arSessionOrigin.SetActive(false);
+            //RouteContainer.SetActive(false);
+            _camera.gameObject.SetActive(true);
+            //s.View = View.SearchMenu;
+        }
+
+        private void loadRoute(Location destination)
+        {
+            if (destination != null)
+            {
+                var lang = _mapboxRoute.Settings.Language;
+                var api = new MapboxApi(_mapboxToken, lang);
+                var loader = new RouteLoader(api, true);
+                StartCoroutine(
+                        loader.LoadRoute(
+                            new RouteWaypoint { Type = RouteWaypointType.UserLocation },
+                            new RouteWaypoint { Type = RouteWaypointType.Location, Location = destination },
+                            (err, res) =>
+                            {
+                                if (err != null)
+                                {
+                                    Debug.LogError(err);
+                                    // s.Results = new List<GeocodingFeature>();
+                                    return;
+                                }
+
+                                _arSession.SetActive(true);
+                                _arSessionOrigin.SetActive(true);
+                                //RouteContainer.SetActive(true);
+                                _camera.gameObject.SetActive(false);
+                                //s.View = View.Route;
+                                _mapboxRoute.BuildRoute(res);
+                            }));
+            }
+        }
     }
 }
 

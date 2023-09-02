@@ -61,7 +61,7 @@ namespace ARLocation
         public Camera MainCamera { get; private set; }
 
         /// <summary>
-        /// Returns the Y world-coordinate of the detected plane which is nearest to the user/camera.
+        /// Returns the Y world-coordinate of the detected plane which is nearest to the user/_camera.
         /// </summary>
         public float CurrentGroundY => groundHeight ? groundHeight.CurrentGroundY : -ARLocation.Config.InitialGroundHeightGuess;
 

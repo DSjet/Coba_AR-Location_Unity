@@ -266,7 +266,7 @@ MonoBehaviour:
           Label: 
         Query: 
       To:
-        Type: 2
+        Type: 0
         Location:
           Latitude: -7.7590575730589455
           Longitude: 110.38122221702903
@@ -276,7 +276,7 @@ MonoBehaviour:
         Query: Universitas Gadjah Mada (UGM), Jalan Kaliurang KM. 4,5, Sleman, Daerah
           Istimewa Yogyakarta 55281, Indonesia
       CustomRoute: {fileID: 0}
-    LoadRouteAtStartup: 1
+    LoadRouteAtStartup: 0
     GroundHeight: 1.4
     OnMapboxRouteLoadError:
       m_PersistentCalls:
@@ -834,10 +834,20 @@ MonoBehaviour:
   _mapboxRoute: {fileID: 80661909}
   _locationPoints:
   - {fileID: 11400000, guid: 9303e18e870ba2c438b914517bba055e, type: 2}
-  locationPointPrefab: {fileID: 3308073046599262167, guid: bbc61d3835f2cf14da40232eb7c5f947,
+  _arSession: {fileID: 1399307144}
+  _arSessionOrigin: {fileID: 17594749}
+  _camera: {fileID: 1533713224}
+  _destination:
+    Latitude: 0
+    Longitude: 0
+    Altitude: 0
+    AltitudeMode: 0
+    Label: 
+  _mapboxToken: eyJ1IjoiYW5hbWFsb2Nhcmlzc3MiLCJhIjoiY2xreThyYXgxMWVjcDNtcHJ6emY1a3QzaCJ9
+  _locationPointPrefab: {fileID: 3308073046599262167, guid: bbc61d3835f2cf14da40232eb7c5f947,
     type: 3}
-  locationPointContainer: {fileID: 2049005323}
-  mapsUI: {fileID: 1835301382}
+  _locationPointContainer: {fileID: 2049005323}
+  _mapsUI: {fileID: 1835301382}
 --- !u!1 &434087118
 GameObject:
   m_ObjectHideFlags: 0

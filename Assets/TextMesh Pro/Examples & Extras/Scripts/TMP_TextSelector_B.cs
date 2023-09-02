@@ -41,7 +41,7 @@ namespace TMPro.Examples
 
             m_Canvas = gameObject.GetComponentInParent<Canvas>();
 
-            // Get a reference to the camera if Canvas Render Mode is not ScreenSpace Overlay.
+            // Get a reference to the _camera if Canvas Render Mode is not ScreenSpace Overlay.
             if (m_Canvas.renderMode == RenderMode.ScreenSpaceOverlay)
                 m_Camera = null;
             else
@@ -470,7 +470,7 @@ namespace TMPro.Examples
             // Get a reference to the vertices that we need to replace.
             Vector3[] dst_vertices = m_TextMeshPro.textInfo.meshInfo[materialIndex].vertices;
 
-            // Restore / Copy vertices from source to destination
+            // Restore / Copy vertices from source to _destination
             dst_vertices[vertexIndex + 0] = src_vertices[vertexIndex + 0];
             dst_vertices[vertexIndex + 1] = src_vertices[vertexIndex + 1];
             dst_vertices[vertexIndex + 2] = src_vertices[vertexIndex + 2];
@@ -483,7 +483,7 @@ namespace TMPro.Examples
             // Get a reference to the cached / original vertex colors.
             Color32[] src_colors = m_cachedMeshInfoVertexData[materialIndex].colors32;
 
-            // Copy the vertex colors from source to destination.
+            // Copy the vertex colors from source to _destination.
             dst_colors[vertexIndex + 0] = src_colors[vertexIndex + 0];
             dst_colors[vertexIndex + 1] = src_colors[vertexIndex + 1];
             dst_colors[vertexIndex + 2] = src_colors[vertexIndex + 2];
