@@ -60,7 +60,7 @@ namespace ARLocation.MapboxRoutes
         {
             if (ARLocationProvider.Instance.IsEnabled)
             {
-                loadRoute(dest);
+                loadRoute(ARLocationProvider.Instance.CurrentLocation.ToLocation(), dest);
                 // ARLocationProvider.Instance.CurrentLocation.ToLocation(),
             }
             //else
@@ -79,7 +79,7 @@ namespace ARLocation.MapboxRoutes
             //s.View = View.SearchMenu;
         }
 
-        private void loadRoute(Location destination)
+        private void loadRoute(Location _, Location destination)
         {
             if (destination != null)
             {
