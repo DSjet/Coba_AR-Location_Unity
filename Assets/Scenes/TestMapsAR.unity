@@ -196,7 +196,6 @@ GameObject:
   m_Component:
   - component: {fileID: 80661910}
   - component: {fileID: 80661909}
-  - component: {fileID: 80661908}
   - component: {fileID: 80661907}
   m_Layer: 0
   m_Name: Mapbox Route
@@ -220,21 +219,6 @@ MonoBehaviour:
   ArrowSprite: {fileID: 21300000, guid: 19a300465515241c2bb5670f7b18e69b, type: 3}
   NeutralArrowDirection: 1
   Margin: 20
---- !u!114 &80661908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80661906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d4565e2fba5454e885ee85e49be2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Settings:
-    LineMaterial: {fileID: 2100000, guid: 697c3d00ed75e4c388f1112e6817fa65, type: 2}
-    TextureOffsetFactor: -4
 --- !u!114 &80661909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +234,7 @@ MonoBehaviour:
   Settings:
     SignpostPrefabs:
     - {fileID: 2406714923471210871, guid: 154e5264001534d7999c9720b114562d, type: 3}
-    PathRenderer: {fileID: 80661908}
+    PathRenderer: {fileID: 0}
     OnScreenIndicator: {fileID: 80661907}
     MapboxToken: pk.eyJ1IjoiYW5hbWFsb2Nhcmlzc3MiLCJhIjoiY2xreThyYXgxMWVjcDNtcHJ6emY1a3QzaCJ9.G-FT0j61H4HkN3Af0ODUsQ
     Language: 12
@@ -683,7 +667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &270927390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,6 +711,8 @@ GameObject:
   - component: {fileID: 353424579}
   - component: {fileID: 353424578}
   - component: {fileID: 353424582}
+  - component: {fileID: 353424583}
+  - component: {fileID: 353424584}
   m_Layer: 5
   m_Name: Select Location UI
   m_TagString: Untagged
@@ -844,11 +830,40 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 0
     Label: 
-  _mapboxToken: pk.eyJ1IjoiYW5hbWFsb2Nhcmlzc3MiLCJhIjoiY2xreThyYXgxMWVjcDNtcHJ6emY1a3QzaCJ9.G-FT0j61H4HkN3Af0ODUsQ
+  _mapboxToken: pk.eyJ1IjoiZG1iZm0iLCJhIjoiY2tyYW9hdGMwNGt6dTJ2bzhieDg3NGJxNyJ9.qaQsMUbyu4iARFe0XB2SWg
   _locationPointPrefab: {fileID: 3308073046599262167, guid: bbc61d3835f2cf14da40232eb7c5f947,
     type: 3}
   _locationPointContainer: {fileID: 2049005323}
   _mapsUI: {fileID: 1835301382}
+--- !u!114 &353424583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353424577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d4565e2fba5454e885ee85e49be2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Settings:
+    LineMaterial: {fileID: 2100000, guid: 697c3d00ed75e4c388f1112e6817fa65, type: 2}
+    TextureOffsetFactor: -4
+--- !u!114 &353424584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353424577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0aadb6b1ad64fba9d3df3e2d3d875f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Settings:
+    LineMaterial: {fileID: 2100000, guid: 697c3d00ed75e4c388f1112e6817fa65, type: 2}
 --- !u!1 &434087118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1215,7 @@ MonoBehaviour:
   MockLocationData: {fileID: 11400000, guid: ebdefa6f20bb93c489f6bba4f5ce380f, type: 2}
   MaxWaitTime: 200
   StartUpDelay: 0
-  DebugMode: 0
+  DebugMode: 1
   OnEnabled:
     m_PersistentCalls:
       m_Calls: []

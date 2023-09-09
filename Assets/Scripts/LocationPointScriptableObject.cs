@@ -1,3 +1,4 @@
+using ARLocation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,4 +10,5 @@ public class LocationPointScriptableObject : ScriptableObject
     public string locationQuery;
     public string locationType;
     public string locationDescription;
+    public Location location;
 }

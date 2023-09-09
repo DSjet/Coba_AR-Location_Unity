@@ -23,6 +23,8 @@ namespace ARLocation.MapboxRoutes
         [SerializeField] Transform _locationPointContainer;
         [SerializeField] GameObject _mapsUI;
 
+        Location _placeOfInterest;
+
         private List<GeocodingFeature> _geocodingFeatureResult;
 
         void Start()
@@ -31,11 +33,13 @@ namespace ARLocation.MapboxRoutes
             {
                 LocationPointComponent locationPointComponent = Instantiate(_locationPointPrefab, _locationPointContainer);
                 locationPointComponent.SetLocationPointComponent(locationPoint);
-                locationPointComponent.GetComponent<Button>().onClick.AddListener(() => StartCoroutine(StartRouting(locationPoint.locationQuery)));
+                StartCoroutine(LocationQuery(locationPoint.locationQuery));
+                locationPoint.location = _placeOfInterest;
+                locationPointComponent.GetComponent<Button>().onClick.AddListener(() => StartRoute(_placeOfInterest));
             }
         }
 
-        private IEnumerator StartRouting(string queryRequest)
+        private IEnumerator LocationQuery(string queryRequest)
         {
             MapboxApi mapboxApi = new MapboxApi(_mapboxToken);
             yield return mapboxApi.QueryLocal(queryRequest, true);
@@ -49,10 +53,12 @@ namespace ARLocation.MapboxRoutes
             else
             {
                 _geocodingFeatureResult = mapboxApi.QueryLocalResult.features;
-                Location _placeOfInterest = _geocodingFeatureResult[0].geometry.coordinates[0];
-                StartRoute(_placeOfInterest);
-                _mapsUI.SetActive(true);
-                gameObject.SetActive(false);
+                foreach (var feature in _geocodingFeatureResult)
+                {
+                    Debug.Log(feature.geometry.coordinates[0]);
+                }
+                _placeOfInterest = _geocodingFeatureResult[0].geometry.coordinates[0];
+                
             }
         }
 
@@ -60,18 +66,20 @@ namespace ARLocation.MapboxRoutes
         {
             if (ARLocationProvider.Instance.IsEnabled)
             {
-                loadRoute(ARLocationProvider.Instance.CurrentLocation.ToLocation(), dest);
+                _mapsUI.SetActive(true);
+                //gameObject.SetActive(false);
+                LoadRoute(dest);
                 // ARLocationProvider.Instance.CurrentLocation.ToLocation(),
             }
             //else
             //{
-            //    ARLocationProvider.Instance.OnEnabled.AddListener(loadRoute());
+            //    ARLocationProvider.Instance.OnEnabled.AddListener(LoadRoute());
             //}
         }
 
         public void EndRoute()
         {
-            //ARLocationProvider.Instance.OnEnabled.RemoveListener(loadRoute);
+            //ARLocationProvider.Instance.OnEnabled.RemoveListener(LoadRoute);
             _arSession.SetActive(false);
             _arSessionOrigin.SetActive(false);
             //RouteContainer.SetActive(false);
@@ -79,7 +87,7 @@ namespace ARLocation.MapboxRoutes
             //s.View = View.SearchMenu;
         }
 
-        private void loadRoute(Location _, Location destination)
+        private void LoadRoute(Location destination)
         {
             if (destination != null)
             {
