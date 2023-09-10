@@ -19,7 +19,7 @@ namespace ARLocation.MapboxRoutes.Examples.Search
         public Camera Camera;
         public MapboxRoute MapboxRoute;
         public AbstractRouteRenderer RoutePathRenderer;
-        public AbstractRouteRenderer NextTargetPathRenderer;
+        public AbstractRouteRenderer NextTargetPathRenderer;    
         public bool DebugMode = true;
 
         private AbstractRouteRenderer currentPathRenderer => s.LineType == LineType.Route ? RoutePathRenderer : NextTargetPathRenderer;

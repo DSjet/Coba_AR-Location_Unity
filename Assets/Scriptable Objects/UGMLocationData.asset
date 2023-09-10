@@ -17,3 +17,9 @@ MonoBehaviour:
     Daerah Istimewa Yogyakarta 55281, Indonesia
   locationType: Academic Institution
   locationDescription: Yes
+  location:
+    Latitude: -7.770427972195095
+    Longitude: 110.37760708835364
+    Altitude: 0
+    AltitudeMode: 3
+    Label: 
