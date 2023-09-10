@@ -58,7 +58,6 @@ namespace ARLocation.MapboxRoutes
                     Debug.Log(feature.geometry.coordinates[0]);
                 }
                 _placeOfInterest = _geocodingFeatureResult[0].geometry.coordinates[0];
-                
             }
         }
 
@@ -113,6 +112,7 @@ namespace ARLocation.MapboxRoutes
                                 _camera.gameObject.SetActive(false);
                                 //s.View = View.Route;
                                 _mapboxRoute.BuildRoute(res);
+                                gameObject.SetActive(false);
                             }));
             }
         }

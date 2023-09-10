@@ -820,7 +820,6 @@ MonoBehaviour:
   _mapboxRoute: {fileID: 80661909}
   _locationPoints:
   - {fileID: 11400000, guid: 9303e18e870ba2c438b914517bba055e, type: 2}
-  - {fileID: 11400000, guid: e1a5534ae1a4eb04abc5eb2aa453eb61, type: 2}
   _arSession: {fileID: 1399307144}
   _arSessionOrigin: {fileID: 17594749}
   _camera: {fileID: 1533713224}
