@@ -12,7 +12,7 @@ namespace ARLocation.MapboxRoutes
     public class LocationDataManager : MonoBehaviour
     {
         [SerializeField] MapboxRoute _mapboxRoute;
-        [SerializeField] GameObject _locationContainer;
+        [SerializeField] GameObject _locationContainer; // location select
         [SerializeField] List<LocationPointScriptableObject> _locationPoints;
         [SerializeField] GameObject _arSession;
         [SerializeField] GameObject _arSessionOrigin;
@@ -20,7 +20,7 @@ namespace ARLocation.MapboxRoutes
         [SerializeField] string _mapboxToken;
         [SerializeField] GameObject _routeContainer;
         [SerializeField] LocationPointComponent _locationPointPrefab;
-        [SerializeField] Transform _locationPointContainer;
+        [SerializeField] Transform _locationPointContainer; // grid container 
         [SerializeField] GameObject _mapsUI;
 
         Location _placeOfInterest;

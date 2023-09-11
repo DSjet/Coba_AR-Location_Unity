@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LocationData", menuName = "ScriptableObjects/LocationPointScriptableObject", order = 1)]
+[CreateAssetMenu(fileName = "LocationData", menuName = "LocationPoints/LocationPointScriptableObject", order = 1)]
 public class LocationPointScriptableObject : ScriptableObject
 {
     public string locationName;
