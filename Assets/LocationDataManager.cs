@@ -41,37 +41,12 @@ namespace ARLocation.MapboxRoutes
             }
         }
 
-        private IEnumerator LocationQuery(string queryRequest)
-        {
-            MapboxApi mapboxApi = new MapboxApi(_mapboxToken);
-            yield return mapboxApi.QueryLocal(queryRequest, true);
-            Debug.Log("Clicked");
-
-            if (mapboxApi.ErrorMessage != null)
-            {
-                Debug.LogError(mapboxApi.ErrorMessage);
-                _geocodingFeatureResult = new List<GeocodingFeature>();
-            }
-            else
-            {
-                _geocodingFeatureResult = mapboxApi.QueryLocalResult.features;
-                foreach (var feature in _geocodingFeatureResult)
-                {
-                    Debug.Log(feature.geometry.coordinates[0]);
-                }
-                _placeOfInterest = _geocodingFeatureResult[0].geometry.coordinates[0];
-            }
-        }
-
         public void StartRoute(Location dest)
         {
             _placeOfInterest = dest;
             if (ARLocationProvider.Instance.IsEnabled)
             {
-                _mapsUI.SetActive(true);
-                //gameObject.SetActive(false);
                 LoadRoute(dest);
-                // ARLocationProvider.Instance.CurrentLocation.ToLocation(),
             }
             else
             {
@@ -81,12 +56,12 @@ namespace ARLocation.MapboxRoutes
 
         public void EndRoute()
         {
-            //ARLocationProvider.Instance.OnEnabled.RemoveListener(LoadRoute);
+            ARLocationProvider.Instance.OnEnabled.RemoveListener(LoadRoute);
+            _mapsUI.SetActive(false);
             _arSession.SetActive(false);
             _arSessionOrigin.SetActive(false);
-            //RouteContainer.SetActive(false);
+            _routeContainer.SetActive(false);
             _camera.gameObject.SetActive(true);
-            //s.View = View.SearchMenu;
         }
 
         private void LoadRoute(Location _)
@@ -105,7 +80,6 @@ namespace ARLocation.MapboxRoutes
                                 if (err != null)
                                 {
                                     Debug.LogError(err);
-                                    // s.Results = new List<GeocodingFeature>();
                                     return;
                                 }
                                 _locationContainer.SetActive(false);
@@ -113,7 +87,7 @@ namespace ARLocation.MapboxRoutes
                                 _arSessionOrigin.SetActive(true);
                                 _routeContainer.SetActive(true);
                                 _camera.gameObject.SetActive(false);
-                                //s.View = View.Route;
+                                _mapsUI.SetActive(true);
                                 _mapboxRoute.BuildRoute(res);
                             }));
             }
