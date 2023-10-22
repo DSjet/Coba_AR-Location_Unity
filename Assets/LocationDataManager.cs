@@ -22,6 +22,7 @@ namespace ARLocation.MapboxRoutes
         [SerializeField] LocationPointComponent _locationPointPrefab;
         [SerializeField] Transform _locationPointContainer; // grid container 
         [SerializeField] GameObject _mapsUI;
+        [SerializeField] LocationInfoUI _locationInfoUI;
 
         Location _placeOfInterest;
 
@@ -38,15 +39,16 @@ namespace ARLocation.MapboxRoutes
                 //StartCoroutine(LocationQuery(locationPoint.locationQuery));
                 //locationPoint.location = _placeOfInterest;
                 locationPointComponent.GetComponent<Button>().onClick.AddListener(() => StartRoute(locationPoint.location));
+                locationPointComponent.GetComponent<Button>().onClick.AddListener(() => _locationInfoUI.UpdateInfoUI(locationPoint));
             }
         }
 
-        public void StartRoute(Location dest)
+        public void StartRoute(Location destPoint)
         {
-            _placeOfInterest = dest;
+            _placeOfInterest = destPoint;
             if (ARLocationProvider.Instance.IsEnabled)
             {
-                LoadRoute(dest);
+                LoadRoute(_placeOfInterest);
             }
             else
             {
@@ -68,6 +70,7 @@ namespace ARLocation.MapboxRoutes
         {
             if (_placeOfInterest != null)
             {
+                // Building Route
                 var lang = _mapboxRoute.Settings.Language;
                 var api = new MapboxApi(_mapboxToken, lang);
                 var loader = new RouteLoader(api, true);

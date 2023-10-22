@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab17aea93fb39348b517e85917c1c10, type: 3}
+  m_Name: Departemen Fisika
+  m_EditorClassIdentifier: 
+  locationName: Departemen Fisika FMIPA UGM
+  locationQuery: 
+  locationType: 
+  locationDescription: Departemen Fisika merupakan rumah pendidikan bertaraf internasional
+    untuk bidang fisika dan geofisika. Didedikasikan untuk penelitian dan pendidikan
+    mutakhir di bidang fisika, departemen ini menawarkan laboratorium canggih untuk
+    Fisika Dasar, Fisika Atom Inti, Fisika Material dan Instrumentasi, juga Geofisika,
+    yang mempelajari bumi melalui kaidah fisika.  Departemen juga mendukung kelompok
+    bidang keahlian untuk Fisika Material Fungsional, Fisika Teoretik dan Komputasional,
+    Fisika Terapan, dan Geofisika.
+  location:
+    Latitude: -7.76696267165716
+    Longitude: 110.375660952222
+    Altitude: 0
+    AltitudeMode: 3
+    Label: 
+  locationImage: {fileID: 21300000, guid: 5179acfef8c3cdd4ea828397385087fd, type: 3}

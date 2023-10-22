@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab17aea93fb39348b517e85917c1c10, type: 3}
+  m_Name: Pos Satpam FMIPA UGM
+  m_EditorClassIdentifier: 
+  locationName: Pos Satpam FMIPA UGM
+  locationQuery: 
+  locationType: 
+  locationDescription: Pos Satpam FMIPA berlokasi di seberang Gedung Kuliah S1, serta
+    menjadi tempat perbatasan antara FMIPA dengan Fakultas Biologi. Mahasiswa dan
+    dosen dapat menghampiri pos satpam untuk bertanya mengenai lokasi atau menyampaikan
+    keluhan keamanan di lingkungan FMIPA UGM.
+  location:
+    Latitude: -7.76695098328571
+    Longitude: 110.376339686433
+    Altitude: 0
+    AltitudeMode: 3
+    Label: 

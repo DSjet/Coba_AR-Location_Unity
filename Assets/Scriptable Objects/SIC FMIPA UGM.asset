@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab17aea93fb39348b517e85917c1c10, type: 3}
+  m_Name: SIC FMIPA UGM
+  m_EditorClassIdentifier: 
+  locationName: SIC FMIPA UGM
+  locationQuery: 
+  locationType: 
+  locationDescription: SIC FMIPA merupakan kawasan dalam ruangan (indoor) yang didirikan
+    untuk memberi fasilitas ruang berlajar bagi seluruh mahasiswa FMIPA sarjana,
+    magister, maupun doktor. Selain ruang belajar terbuka dengan fasilitas AC, terdapat
+    juga lebih dari 3 ruangan yang dapat dipakai untuk keperluan rapat, studi kelompok,
+    maupun perkumpulan organisasi.
+  location:
+    Latitude: -7.76785087075456
+    Longitude: 110.376869742415
+    Altitude: 0
+    AltitudeMode: 3
+    Label: 

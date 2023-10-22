@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab17aea93fb39348b517e85917c1c10, type: 3}
+  m_Name: Departemen Kimia
+  m_EditorClassIdentifier: 
+  locationName: Departemen Kimia FMIPA UGM
+  locationQuery: 
+  locationType: 
+  locationDescription: 'Departemen Kimia yang didedikasikan untuk program studi kimia
+    memiliki sarana penelitian dan praktikum laboratorium dengan instrumentasi terlengkap,
+    dimana area fasilitas mencakup luas sebesar 3093 m2. Dimulai dari laboratorium
+    Kimia Dasar, Kimia Analitik, dan Kimia Anorganik untuk mahasiswa S1, departemen
+    ini juga menaungi laboratorium Kimia Fisika, Kimia Organik dan Biokimia, serta
+    laboratorium Kimia Komputasi yang didukung fasilitas komputer dan software terbaru
+    untuk bidang kimia seperti Hyperchem 7, Gaussian 98, dan Autodoc. '
+  location:
+    Latitude: -7.76726738105462
+    Longitude: 110.377314838438
+    Altitude: 0
+    AltitudeMode: 3
+    Label: 

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab17aea93fb39348b517e85917c1c10, type: 3}
+  m_Name: Gedung Kuliah S2S3
+  m_EditorClassIdentifier: 
+  locationName: Gedung Kuliah S2 & S3 FMIPA UGM
+  locationQuery: 
+  locationType: 
+  locationDescription: Gedung Kuliah S2 dan S3 FMIPA berperan sebagai sarana mahasiswa
+    dan dosen magister maupun doktor untuk menempuh pendidikan. Gedung S2 ini memiliki
+    fasilitas laboratorium yang didampingi oleh ahli-ahli untuk menunjang penelitian
+    dan riset yang dijalankan.
+  location:
+    Latitude: -7.76696099019152
+    Longitude: 110.376030619951
+    Altitude: 0
+    AltitudeMode: 3
+    Label: 
