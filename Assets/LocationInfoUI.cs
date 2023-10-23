@@ -10,6 +10,7 @@ public class LocationInfoUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _locationDescription;
     [SerializeField] private Image _locationImage;
     
+    
     public void UpdateInfoUI(LocationPointScriptableObject locationPoint)
     {
         _locationName.text = locationPoint.locationName;
