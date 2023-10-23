@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Departemen Ilmu Komputer dan Elektronika
   locationQuery: 
-  locationType: 
+  locationType: Departement of Faculty
   locationDescription: Departemen Ilmu Komputer dan Elektronika merangkul jurusan
     Ilmu Komputer serta jurusan Elektronika dan Instrumentasi. Terdapat tiga laboratorium
     dasar yang dibawahi, yakni lab Komputer Dasar, Elektronika Dasar, serta Instrumentasi
@@ -27,3 +27,4 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 21300000, guid: 7b28dcd3bce5cfc498eb807394afd14a, type: 3}

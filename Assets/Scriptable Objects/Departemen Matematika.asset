@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Departemen Matematika FMIPA UGM
   locationQuery: 
-  locationType: 
+  locationType: Departement of Faculty
   locationDescription: Departemen Matematika merupakan departemen yang membuka tiga
     jurusan, yakni jurusan Matematika, Statistika, serta Aktuaria. Sebagai salah
     satu departemen tertua di fakultas, fasilitas enam laboratorium modern milik
@@ -27,3 +27,4 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 21300000, guid: 9710199f9f5a5754497a58534325a175, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: SIC FMIPA UGM
   locationQuery: 
-  locationType: 
+  locationType: Student Innovation Center (Common Room)
   locationDescription: SIC FMIPA merupakan kawasan dalam ruangan (indoor) yang didirikan
     untuk memberi fasilitas ruang berlajar bagi seluruh mahasiswa FMIPA sarjana,
     magister, maupun doktor. Selain ruang belajar terbuka dengan fasilitas AC, terdapat
@@ -26,3 +26,4 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 21300000, guid: ff64f94536c471247b868a479aac2a1f, type: 3}

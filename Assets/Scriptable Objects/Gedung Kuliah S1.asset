@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Gedung Kuliah S1 FMIPA UGM
   locationQuery: 
-  locationType: 
+  locationType: Undergraduate Classrooms
   locationDescription: Gedung Kuliah S1 FMIPA berperan sebagai pusat untuk penyelenggaraan
     kelas dan studi maupun acara umum dan tempat berkumpul mahasiswa FMIPA sarjana
     tanpa melihat asal departemen. Gedung S1 ini memiliki tujuh lantai dengan fasilitas
@@ -27,3 +27,4 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 21300000, guid: cf9df9ea06b20814285440d0613186ad, type: 3}

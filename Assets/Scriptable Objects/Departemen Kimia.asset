@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Departemen Kimia FMIPA UGM
   locationQuery: 
-  locationType: 
+  locationType: Departement of Faculty
   locationDescription: 'Departemen Kimia yang didedikasikan untuk program studi kimia
     memiliki sarana penelitian dan praktikum laboratorium dengan instrumentasi terlengkap,
     dimana area fasilitas mencakup luas sebesar 3093 m2. Dimulai dari laboratorium
@@ -28,3 +28,4 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 21300000, guid: 8cb4d75951bd4324aa7082d1b847b0b9, type: 3}

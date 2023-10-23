@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Masjid FMIPA UGM
   locationQuery: 
-  locationType: 
+  locationType: Religious Place
   locationDescription: Masjid ini terletak di tengah wilayah FMIPA, dan berfungsi
     sebagai pusat ibadah bagi para mahasiswa beragama Muslim. Didirikannya Masjid
     FMIPA diharapkan menjadi simbol persatuan sekaligus keragaman dalam lingkungan
@@ -25,3 +25,4 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 21300000, guid: 5e33e43191e1c7e41ba8987d288f1e74, type: 3}

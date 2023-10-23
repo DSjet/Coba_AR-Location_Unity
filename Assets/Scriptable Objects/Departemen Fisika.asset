@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Departemen Fisika FMIPA UGM
   locationQuery: 
-  locationType: 
+  locationType: Departement of Faculty
   locationDescription: Departemen Fisika merupakan rumah pendidikan bertaraf internasional
     untuk bidang fisika dan geofisika. Didedikasikan untuk penelitian dan pendidikan
     mutakhir di bidang fisika, departemen ini menawarkan laboratorium canggih untuk

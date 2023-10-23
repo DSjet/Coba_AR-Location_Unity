@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Gedung Kuliah S2 & S3 FMIPA UGM
   locationQuery: 
-  locationType: 
+  locationType: Postgraduate Classrooms
   locationDescription: Gedung Kuliah S2 dan S3 FMIPA berperan sebagai sarana mahasiswa
     dan dosen magister maupun doktor untuk menempuh pendidikan. Gedung S2 ini memiliki
     fasilitas laboratorium yang didampingi oleh ahli-ahli untuk menunjang penelitian
@@ -25,3 +25,4 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 21300000, guid: 6808a0a48bc140b40ab3625d31f37e93, type: 3}

@@ -16,10 +16,15 @@ MonoBehaviour:
   locationQuery: Universitas Gadjah Mada (UGM), Jalan Kaliurang KM. 4,5, Sleman,
     Daerah Istimewa Yogyakarta 55281, Indonesia
   locationType: Academic Institution
-  locationDescription: Yes
+  locationDescription: Universitas Gadjah Mada (UGM) didirikan pada periode awal
+    kemerdekaan, tepatnya pada 19 Desember 1949, dan telah didaulat sebagai Balai
+    Nasional Ilmu Pengetahuan dan Kebudayaan bagi penyelenggaraan pendidikan tinggi
+    nasional. Sebagai universitas peringkat pertama di Indonesia, UGM menaungi lebih
+    dari 270 program studi dari 18 fakultas dan 2 sekolah yang dimiliki.
   location:
     Latitude: -7.770427972195095
     Longitude: 110.37760708835364
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 21300000, guid: 6b8b0a132e2a3a842ac673ddf601e026, type: 3}

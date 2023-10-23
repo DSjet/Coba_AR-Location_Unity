@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Pos Satpam FMIPA UGM
   locationQuery: 
-  locationType: 
+  locationType: Security and Information
   locationDescription: Pos Satpam FMIPA berlokasi di seberang Gedung Kuliah S1, serta
     menjadi tempat perbatasan antara FMIPA dengan Fakultas Biologi. Mahasiswa dan
     dosen dapat menghampiri pos satpam untuk bertanya mengenai lokasi atau menyampaikan
@@ -25,3 +25,4 @@ MonoBehaviour:
     Altitude: 0
     AltitudeMode: 3
     Label: 
+  locationImage: {fileID: 0}
